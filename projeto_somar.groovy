@@ -1,27 +1,38 @@
 programa {
-
   funcao inicio() {
 
-    inteiro cat[10] = {2,5,1,3,4,9,7,8,10,6}
-    inteiro i, j, aux
+    inteiro vetor[10]
+    inteiro i, soma = 0
+    real media
 
     para (i = 0; i < 10; i++) {
-      para (j = 0; j < 10; j++) {
+      escreva("Digite um numero: ")
+      leia(vetor[i])
+    }
 
-        se (cat[i] > cat[j]) {
-          aux = cat[i]
-          cat[i] = cat[j]
-          cat[j] = aux
-        }
+    escreva("\nElementos nos indices impares:\n")
+    para (i = 0; i < 10; i++) {
+      se (i % 2 != 0) {
+        escreva(vetor[i], " ")
+      }
+    }
 
+    escreva("\n\nElementos pares:\n")
+    para (i = 0; i < 10; i++) {
+      se (vetor[i] % 2 == 0) {
+        escreva(vetor[i], " ")
       }
     }
 
     para (i = 0; i < 10; i++) {
-      escreva(cat[i], "\n")
+      soma = soma + vetor[i]
     }
+
+    escreva("\n\nSoma:\n", soma)
+
+    media = soma / 10
+
+    escreva("\n\nMedia:\n", media)
 
   }
 }
-
-// Código em Portugol responsável por calcular a soma de 10 números inteiros (pares e ímpares)
